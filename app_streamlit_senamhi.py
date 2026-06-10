@@ -17,10 +17,13 @@ st.markdown("---")
 
 # 2. Cargar el modelo global y el codificador de países en caché para alta velocidad
 @st.cache_resource
+
+# 2. Cargar el modelo global y el codificador de países en caché para alta velocidad
+@st.cache_resource
 def cargar_recursos_ia():
-    path_archivos = 'C:/Users/rcapia/Downloads/Despliegue-web-ENEI/Implaementando_en_vs_code/regresion_senamhi/'
-    modelo = load(f'{path_archivos}modelo_senamhi_regresion.joblib')
-    encoder = load(f'{path_archivos}encoder_paises.joblib')
+    # Eliminamos la ruta de tu computadora C:/... y dejamos solo los nombres de los archivos
+    modelo = load('modelo_senamhi_regresion.joblib')
+    encoder = load('encoder_paises.joblib')
     return modelo, encoder
 
 try:
